@@ -2,10 +2,11 @@ import random
 import sys
 
 from PyQt6.QtCore import QTimer
-from PyQt6.QtWidgets import QMainWindow, QApplication, QDialog
+from PyQt6.QtWidgets import QMainWindow, QApplication, QDialog, QWidget
 
-from five_numbers import Ui_five_number
+from game import Ui_game
 from show_numbers import Ui_numbers_2
+from menu import Ui_menu
 
 
 class Game(QMainWindow):
@@ -14,16 +15,20 @@ class Game(QMainWindow):
 
         self.counter = None
         self.dialog = None
+
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_timer)
 
-        self.ui = Ui_five_number()
+        self.ui = Ui_game()
         self.ui.setupUi(self)
 
         self.set_numbers = []
 
+        self.number_of_numbers = 0
+
         self.ui.answer.clicked.connect(self.checking_the_response)
         self.ui.start.clicked.connect(self.show_numbers)
+        self.ui.Exit.clicked.connect(self.close_game)
 
     def checking_the_response(self):
         text = self.ui.writing_numbers.toPlainText().strip()  # Убираем лишние пробелы
@@ -57,7 +62,6 @@ class Game(QMainWindow):
 
         else:
             self.ui.information.setPlainText("Вы ввели некорректные значения")
-        
 
     def show_numbers(self):
         self.generate_numbers()
@@ -76,7 +80,12 @@ class Game(QMainWindow):
         self.counter += 1
 
     def generate_numbers(self):
-        self.set_numbers = [random.randint(0, 99) for _ in range(3)]
+        self.set_numbers = [random.randint(0, 99) for _ in range(self.number_of_numbers)]
+
+    def close_game(self):
+        self.hide()
+        if self.parent():  # Проверяем, есть ли родитель (Menu)
+            self.parent().show()  # Показываем главное меню
 
 
 class Dialog(QDialog):
@@ -87,13 +96,53 @@ class Dialog(QDialog):
 
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.close)  # Закрыть окно по истечении времени
-        self.timer.start(4000)  # Установить таймер на 4000 миллисекунд (4 секунды)
+        self.timer.start(10000)  # Установить таймер на 10000 миллисекунд (10 секунд)
+
+
+class Menu(QMainWindow):
+    def __init__(self, parent=None):
+        super(Menu, self).__init__(parent)
+        self.game = None
+        self.ui = Ui_menu()
+        self.ui.setupUi(self)
+
+        self.ui.five_numbers.clicked.connect(self.click_five)
+        self.ui.ten_numbers.clicked.connect(self.click_ten)
+        self.ui.fifteen_numbers.clicked.connect(self.click_fifteen)
+        self.ui.exit.clicked.connect(self.close_menu)
+
+    def click_five(self):
+        self.hide()  # Скрыть главное окно
+        self.game = Game(self)  # Создаем экземпляр игры
+        self.game.number_of_numbers = 5  # Устанавливаем количество чисел
+
+        # Открываем второе окно
+        self.game.show()  # Показываем новое основное окно
+
+    def click_ten(self):
+        self.hide()  # Скрыть главное окно
+        self.game = Game(self)  # Создаем экземпляр игры
+        self.game.number_of_numbers = 10  # Устанавливаем количество чисел
+
+        # Открываем второе окно
+        self.game.show()  # Показываем новое основное окно
+
+    def click_fifteen(self):
+        self.hide()  # Скрыть главное окно
+        self.game = Game(self)  # Создаем экземпляр игры
+        self.game.number_of_numbers = 15  # Устанавливаем количество чисел
+
+        # Открываем второе окно
+        self.game.show()  # Показываем новое основное окно
+
+    def close_menu(self):
+        self.close()
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
-    window = Game()
+    window = Menu()
     window.show()
 
     sys.exit(app.exec())
