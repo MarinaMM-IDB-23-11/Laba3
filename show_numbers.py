@@ -14,11 +14,15 @@ class Ui_numbers_2(object):
         numbers_2.setObjectName("numbers_2")
         numbers_2.resize(400, 300)
         numbers_2.setStyleSheet("background-color: rgb(255, 255, 127);\n"
-                                "color: rgb(2, 2, 2);")
+"color: rgb(2, 2, 2);")
         self.numbers = QtWidgets.QTextEdit(parent=numbers_2)
-        self.numbers.setGeometry(QtCore.QRect(30, 40, 331, 211))
+        self.numbers.setGeometry(QtCore.QRect(30, 90, 331, 61))
         self.numbers.setReadOnly(True)
         self.numbers.setObjectName("numbers")
+        self.time = QtWidgets.QTextEdit(parent=numbers_2)
+        self.time.setGeometry(QtCore.QRect(150, 210, 104, 31))
+        self.time.setReadOnly(True)
+        self.time.setObjectName("time")
 
         self.retranslateUi(numbers_2)
         QtCore.QMetaObject.connectSlotsByName(numbers_2)
@@ -26,20 +30,18 @@ class Ui_numbers_2(object):
     def retranslateUi(self, numbers_2):
         _translate = QtCore.QCoreApplication.translate
         numbers_2.setWindowTitle(_translate("numbers_2", "Dialog"))
-        self.numbers.setHtml(_translate("numbers_2",
-                                        "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                        "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-                                        "p, li { white-space: pre-wrap; }\n"
-                                        "hr { height: 1px; border-width: 0; }\n"
-                                        "li.unchecked::marker { content: \"\\2610\"; }\n"
-                                        "li.checked::marker { content: \"\\2612\"; }\n"
-                                        "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                        "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.numbers.setHtml(_translate("numbers_2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
 
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     numbers_2 = QtWidgets.QDialog()
     ui = Ui_numbers_2()
