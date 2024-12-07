@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33dac4c8-2dbb-463f-9ac1-593cda2884f8" name="Changes" comment="add menu">
+    <list default="true" id="33dac4c8-2dbb-463f-9ac1-593cda2884f8" name="Changes" comment="decoration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.ui" beforeDir="false" afterPath="$PROJECT_DIR$/menu.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show_numbers.py" beforeDir="false" afterPath="$PROJECT_DIR$/show_numbers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show_numbers.ui" beforeDir="false" afterPath="$PROJECT_DIR$/show_numbers.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarinaMM-IDB-23-11&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MarinaMM-IDB-23-11/Laba3.git&quot;,
+    &quot;accountId&quot;: &quot;2b881ea3-479c-4826-bd20-fe98c68bff8d&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/five_numbers.py" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -34,7 +50,7 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.show_numbers.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -164,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733583673553</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="decoration">
+      <option name="closed" value="true" />
+      <created>1733592060089</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733592060089</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +207,7 @@
     <MESSAGE value="basic program" />
     <MESSAGE value="error handling" />
     <MESSAGE value="add menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="add menu" />
+    <MESSAGE value="decoration" />
+    <option name="LAST_COMMIT_MESSAGE" value="decoration" />
   </component>
 </project>

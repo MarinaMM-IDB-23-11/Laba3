@@ -132,7 +132,7 @@ class Menu(QMainWindow):
 
         self.game.show()
 
-    def close_menu(self): #закрыть
+    def close_menu(self):  #закрыть
         self.close()
 
 

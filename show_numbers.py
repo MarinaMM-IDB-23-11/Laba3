@@ -15,14 +15,16 @@ class Ui_numbers_2(object):
         numbers_2.resize(400, 300)
         numbers_2.setStyleSheet("background-color: rgb(255, 255, 127);\n"
 "color: rgb(2, 2, 2);")
+        self.verticalLayout = QtWidgets.QVBoxLayout(numbers_2)
+        self.verticalLayout.setObjectName("verticalLayout")
         self.numbers = QtWidgets.QTextEdit(parent=numbers_2)
-        self.numbers.setGeometry(QtCore.QRect(30, 90, 331, 61))
         self.numbers.setReadOnly(True)
         self.numbers.setObjectName("numbers")
+        self.verticalLayout.addWidget(self.numbers)
         self.time = QtWidgets.QTextEdit(parent=numbers_2)
-        self.time.setGeometry(QtCore.QRect(150, 210, 104, 31))
         self.time.setReadOnly(True)
         self.time.setObjectName("time")
+        self.verticalLayout.addWidget(self.time)
 
         self.retranslateUi(numbers_2)
         QtCore.QMetaObject.connectSlotsByName(numbers_2)

@@ -16,36 +16,45 @@ class Ui_menu(object):
         menu.setStyleSheet("background-color: rgb(170, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(parent=menu)
         self.centralwidget.setObjectName("centralwidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.textEdit = QtWidgets.QTextEdit(parent=self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(70, 10, 631, 91))
         self.textEdit.setReadOnly(True)
         self.textEdit.setObjectName("textEdit")
-        self.exit = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.exit.setGeometry(QtCore.QRect(350, 520, 75, 24))
-        self.exit.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                "background-color: rgb(7, 44, 255);")
-        self.exit.setObjectName("exit")
-        self.widget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(150, 180, 471, 281))
-        self.widget.setObjectName("widget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.widget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.addWidget(self.textEdit)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
-        self.five_numbers = QtWidgets.QPushButton(parent=self.widget)
+        self.five_numbers = QtWidgets.QPushButton(parent=self.centralwidget)
         self.five_numbers.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                        "background-color: rgb(7, 44, 255);")
+"background-color: rgb(7, 44, 255);")
         self.five_numbers.setObjectName("five_numbers")
         self.verticalLayout.addWidget(self.five_numbers)
-        self.ten_numbers = QtWidgets.QPushButton(parent=self.widget)
+        self.ten_numbers = QtWidgets.QPushButton(parent=self.centralwidget)
         self.ten_numbers.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(7, 44, 255);")
+"background-color: rgb(7, 44, 255);")
         self.ten_numbers.setObjectName("ten_numbers")
         self.verticalLayout.addWidget(self.ten_numbers)
-        self.fifteen_numbers = QtWidgets.QPushButton(parent=self.widget)
+        self.fifteen_numbers = QtWidgets.QPushButton(parent=self.centralwidget)
         self.fifteen_numbers.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                           "background-color: rgb(7, 44, 255);")
+"background-color: rgb(7, 44, 255);")
         self.fifteen_numbers.setObjectName("fifteen_numbers")
         self.verticalLayout.addWidget(self.fifteen_numbers)
+        self.verticalLayout_2.addLayout(self.verticalLayout)
+        self.verticalLayout_3.addLayout(self.verticalLayout_2)
+        self.textEdit_2 = QtWidgets.QTextEdit(parent=self.centralwidget)
+        self.textEdit_2.setReadOnly(True)
+        self.textEdit_2.setObjectName("textEdit_2")
+        self.verticalLayout_3.addWidget(self.textEdit_2)
+        self.exit = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.exit.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(7, 44, 255);")
+        self.exit.setObjectName("exit")
+        self.verticalLayout_3.addWidget(self.exit)
+        self.horizontalLayout.addLayout(self.verticalLayout_3)
         menu.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=menu)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 33))
@@ -61,26 +70,24 @@ class Ui_menu(object):
     def retranslateUi(self, menu):
         _translate = QtCore.QCoreApplication.translate
         menu.setWindowTitle(_translate("menu", "MainWindow"))
-        self.textEdit.setHtml(_translate("menu",
-                                         "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                         "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-                                         "p, li { white-space: pre-wrap; }\n"
-                                         "hr { height: 1px; border-width: 0; }\n"
-                                         "li.unchecked::marker { content: \"\\2610\"; }\n"
-                                         "li.checked::marker { content: \"\\2612\"; }\n"
-                                         "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                         "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Добро пожаловать в наш тренажер!</span></p>\n"
-                                         "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:700;\"><br /></p>\n"
-                                         "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Выберите уровень:</span></p></body></html>"))
-        self.exit.setText(_translate("menu", "Выход"))
+        self.textEdit.setHtml(_translate("menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Добро пожаловать в наш тренажер!</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:700;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Выберите уровень:</span></p></body></html>"))
         self.five_numbers.setText(_translate("menu", "5 чисел"))
         self.ten_numbers.setText(_translate("menu", "10 чисел"))
         self.fifteen_numbers.setText(_translate("menu", "15 чисел"))
+        self.exit.setText(_translate("menu", "Выход"))
 
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     menu = QtWidgets.QMainWindow()
     ui = Ui_menu()

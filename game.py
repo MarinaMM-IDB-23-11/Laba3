@@ -17,42 +17,52 @@ class Ui_game(object):
         self.centralwidget = QtWidgets.QWidget(parent=game)
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
-        self.information = QtWidgets.QTextEdit(parent=self.centralwidget)
-        self.information.setGeometry(QtCore.QRect(70, 210, 641, 191))
-        self.information.setStyleSheet("background-color: rgb(170, 255, 255);\n"
-                                       "border-color: rgb(255, 255, 255);\n"
-                                       "")
-        self.information.setReadOnly(True)
-        self.information.setObjectName("information")
-        self.Exit = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.Exit.setGeometry(QtCore.QRect(644, 493, 81, 31))
-        self.Exit.setStyleSheet("background-color: rgb(14, 46, 255);\n"
-                                "color: rgb(255, 255, 255);")
-        self.Exit.setObjectName("Exit")
-        self.start = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.start.setGeometry(QtCore.QRect(70, 493, 91, 31))
-        self.start.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                 "background-color: rgb(7, 44, 255);")
-        self.start.setObjectName("start")
-        self.answer = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.answer.setGeometry(QtCore.QRect(640, 180, 75, 24))
-        self.answer.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                  "background-color: rgb(20, 3, 255);")
-        self.answer.setObjectName("answer")
-        self.widget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(70, 30, 641, 141))
-        self.widget.setObjectName("widget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.widget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
-        self.text = QtWidgets.QTextEdit(parent=self.widget)
+        self.text = QtWidgets.QTextEdit(parent=self.centralwidget)
         self.text.setReadOnly(True)
         self.text.setObjectName("text")
         self.verticalLayout.addWidget(self.text)
-        self.writing_numbers = QtWidgets.QTextEdit(parent=self.widget)
+        self.writing_numbers = QtWidgets.QTextEdit(parent=self.centralwidget)
         self.writing_numbers.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.writing_numbers.setObjectName("writing_numbers")
         self.verticalLayout.addWidget(self.writing_numbers)
+        self.verticalLayout_2.addLayout(self.verticalLayout)
+        self.answer = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.answer.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(20, 3, 255);")
+        self.answer.setObjectName("answer")
+        self.verticalLayout_2.addWidget(self.answer)
+        self.information = QtWidgets.QTextEdit(parent=self.centralwidget)
+        self.information.setStyleSheet("background-color: rgb(170, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"")
+        self.information.setReadOnly(True)
+        self.information.setObjectName("information")
+        self.verticalLayout_2.addWidget(self.information)
+        self.verticalLayout_3.addLayout(self.verticalLayout_2)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.start = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.start.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(7, 44, 255);")
+        self.start.setObjectName("start")
+        self.horizontalLayout.addWidget(self.start)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.Exit = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.Exit.setStyleSheet("background-color: rgb(14, 46, 255);\n"
+"color: rgb(255, 255, 255);")
+        self.Exit.setObjectName("Exit")
+        self.horizontalLayout.addWidget(self.Exit)
+        self.verticalLayout_3.addLayout(self.horizontalLayout)
+        self.verticalLayout_4.addLayout(self.verticalLayout_3)
         game.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=game)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 33))
@@ -68,33 +78,30 @@ class Ui_game(object):
     def retranslateUi(self, game):
         _translate = QtCore.QCoreApplication.translate
         game.setWindowTitle(_translate("game", "MainWindow"))
-        self.information.setHtml(_translate("game",
-                                            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-                                            "p, li { white-space: pre-wrap; }\n"
-                                            "hr { height: 1px; border-width: 0; }\n"
-                                            "li.unchecked::marker { content: \"\\2610\"; }\n"
-                                            "li.checked::marker { content: \"\\2612\"; }\n"
-                                            "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                            "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.Exit.setText(_translate("game", "Назад"))
-        self.start.setText(_translate("game", "Начать"))
+        self.text.setHtml(_translate("game", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Введите числа</span></p></body></html>"))
         self.answer.setText(_translate("game", "Ответить"))
-        self.text.setHtml(_translate("game",
-                                     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                     "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-                                     "p, li { white-space: pre-wrap; }\n"
-                                     "hr { height: 1px; border-width: 0; }\n"
-                                     "li.unchecked::marker { content: \"\\2610\"; }\n"
-                                     "li.checked::marker { content: \"\\2612\"; }\n"
-                                     "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                     "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-                                     "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Введите числа</span></p></body></html>"))
+        self.information.setHtml(_translate("game", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.start.setText(_translate("game", "Начать"))
+        self.Exit.setText(_translate("game", "Назад"))
 
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     game = QtWidgets.QMainWindow()
     ui = Ui_game()
