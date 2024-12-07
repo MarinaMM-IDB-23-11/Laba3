@@ -12,6 +12,8 @@ class Game(QMainWindow):
     def __init__(self, parent=None):
         super(Game, self).__init__(parent)
 
+        self.counter = None
+        self.dialog = None
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_timer)
 
@@ -24,23 +26,38 @@ class Game(QMainWindow):
         self.ui.start.clicked.connect(self.show_numbers)
 
     def checking_the_response(self):
-        text = self.ui.writing_numbers.toPlainText()
-        text = list(map(int, text.split()))
-        numbers_string = ', '.join(map(str, self.set_numbers))
-        counter_true = 0
+        text = self.ui.writing_numbers.toPlainText().strip()  # Убираем лишние пробелы
+        if text:  # Проверяем, что строка не пустая
+            try:
+                # Преобразуем строку в список целых чисел
+                user_numbers = list(map(int, text.split()))
+            except ValueError:
+                self.ui.information.setPlainText("Вы ввели некорректные значения")
+                return
 
-        for i in range (len(self.set_numbers)):
-            for j in range (len(text)):
-                if self.set_numbers[i] == text[j]:
-                    counter_true += 1
-            if len(self.set_numbers) < len(text):
+            numbers_string = ', '.join(map(str, self.set_numbers))
+            counter_true = 0
 
-                self.ui.information.setPlainText(f"{numbers_string}. Вы запомнили {counter_true} из 3 чисел, но добавили лишние значения.")
+            # Преобразуем self.set_numbers в множество для быстрого поиска
+            if self.set_numbers:
+                for number in user_numbers:
+                    if number in self.set_numbers:
+                        counter_true += 1
+
+                if len(user_numbers) > len(self.set_numbers):
+                    self.ui.information.setPlainText(
+                        f"{numbers_string}. Вы запомнили {counter_true} из {len(self.set_numbers)} чисел, но добавили лишние значения."
+                    )
+                else:
+                    self.ui.information.setPlainText(
+                        f"{numbers_string}. Вы запомнили {counter_true} из {len(self.set_numbers)} чисел."
+                    )
             else:
-                self.ui.information.setPlainText(
-                    f"{numbers_string}. Вы запомнили {counter_true} из 3 чисел")
+                self.ui.information.setPlainText("Чтобы начать, тренировку нажмите кнопку Начать")
 
-
+        else:
+            self.ui.information.setPlainText("Вы ввели некорректные значения")
+        
 
     def show_numbers(self):
         self.generate_numbers()
