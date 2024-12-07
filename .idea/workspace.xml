@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33dac4c8-2dbb-463f-9ac1-593cda2884f8" name="Changes" comment="error handling">
+    <list default="true" id="33dac4c8-2dbb-463f-9ac1-593cda2884f8" name="Changes" comment="add menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/five_numbers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/five_numbers.ui" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733575160291</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add menu">
+      <option name="closed" value="true" />
+      <created>1733583673553</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733583673553</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,6 +182,7 @@
     <MESSAGE value="interface test" />
     <MESSAGE value="basic program" />
     <MESSAGE value="error handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="error handling" />
+    <MESSAGE value="add menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="add menu" />
   </component>
 </project>
